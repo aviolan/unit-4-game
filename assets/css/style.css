@@ -29,7 +29,7 @@ header {
     text-align: center;
 }
 
-#Pika, #Eev, #Bulb, #Char {
+#pika, #eev, #bulb, #char {
     width: 100px;
     height: 100px;
     border-color: black;
@@ -49,16 +49,9 @@ header {
     border-width: 5px;
 }
 
-#Computer {
-    background: black;
+h1 {
+    background-color: black;
     color: white;
-    padding: 20px 20px;
-}
-
-#User {
-    background: white;
-    color: black;
-    padding: 20px 20px;
 }
 
 section:after {
