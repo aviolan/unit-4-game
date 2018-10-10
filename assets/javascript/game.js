@@ -10,7 +10,6 @@ var total = 0;
 var userNumber = [];
 var wins = 0;
 var loss = 0;
-console.log("Your Number: " + total)
 
 function randomNumbers () {
     for (var i = 0; i < 4; i++) {
@@ -46,7 +45,7 @@ function lose() {
     reset();
 }
 
-//Pokemon with random generated numbers
+//Pokemon with random generated numbers and on click functions
 $("#pika").on("click", function() {
     total = total + userNumber[0];
     $("#user").text(total);
@@ -58,6 +57,7 @@ $("#pika").on("click", function() {
         lose();
     }
 });
+console.log("Pikachu Value: " + userNumber[0])
 
 $("#eev").on("click", function() {
     total = total + userNumber[1];
@@ -70,6 +70,7 @@ $("#eev").on("click", function() {
         lose();
     }
 });
+console.log("Eevee Value: " + userNumber[1])
 
 $("#bulb").on("click", function() {
     total = total + userNumber[2];
@@ -82,6 +83,7 @@ $("#bulb").on("click", function() {
         lose();
     }
 });
+console.log("Bulbasaur Value: " + userNumber[2])
 
 $("#char").on("click", function() {
     total = total + userNumber[3];
@@ -94,3 +96,4 @@ $("#char").on("click", function() {
         lose();
     }
 });
+console.log("Charmander Value: " + userNumber[3])
