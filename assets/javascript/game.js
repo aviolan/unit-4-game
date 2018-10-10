@@ -3,30 +3,94 @@ var compMin = 19;
 var compMax = 120;
 var computerNumber = Math.floor( Math.random() * (compMax - compMin + 1)) + compMin;
 $("#computer").text(computerNumber);
+console.log("Match This Number: " + computerNumber)
 
-var userNumber = 0;
+//Total holding the users number, generating numbers 1-2, documenting wins and loss
+var total = 0;
+var userNumber = [];
 var wins = 0;
 var loss = 0;
+console.log("Your Number: " + total)
 
-$("#pika").on("click", function() {
-    userNumber += 10;
-    $("#user").text(userNumber);
-    if (userNumber === computerNumber) {
-        $("#wins").text(wins +=1);
+function randomNumbers () {
+    for (var i = 0; i < 4; i++) {
+        var num = Math.floor(Math.random() * 12 + 1);
+        userNumber.push(num);
     }
-    else if (userNumber >= computerNumber) {
-        $("#losses").text(loss +=1);
+}
+randomNumbers();
+
+//Game reset
+function reset () {
+    computerNumber = Math.floor( Math.random() * (compMax - compMin + 1)) + compMin;
+    $("#computer").text(computerNumber);
+    userNumber = [];
+    randomNumbers();
+    total = 0;
+    $("#user").text(total);
+}
+
+//Game win
+function win() {
+    alert("You win!");
+    wins +=1;
+    $("#wins").text(wins);
+    reset();
+}
+
+//Game lose
+function lose() {
+    alert("You lose!");
+    loss+=1;
+    $("#losses").text(loss);
+    reset();
+}
+
+//Pokemon with random generated numbers
+$("#pika").on("click", function() {
+    total = total + userNumber[0];
+    $("#user").text(total);
+
+    if (total === computerNumber) {
+        win();
+    }
+    else if (total >= computerNumber) {
+        lose();
     }
 });
 
 $("#eev").on("click", function() {
-    alert("eevee!");
+    total = total + userNumber[1];
+    $("#user").text(total);
+
+    if (total === computerNumber) {
+        win();
+    }
+    else if (total >= computerNumber) {
+        lose();
+    }
 });
 
 $("#bulb").on("click", function() {
-    alert("bulbasaur!");
+    total = total + userNumber[2];
+    $("#user").text(total);
+
+    if (total === computerNumber) {
+        win();
+    }
+    else if (total >= computerNumber) {
+        lose();
+    }
 });
 
 $("#char").on("click", function() {
-    alert("charmander!");
+    total = total + userNumber[3];
+    $("#user").text(total);
+
+    if (total === computerNumber) {
+        win();
+    }
+    else if (total >= computerNumber) {
+        lose();
+    }
 });

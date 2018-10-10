@@ -6,6 +6,6 @@ Pokemon Collector Game
 
 The goal of the game is to match your number to the computer's generated number.
 
-User wins when they match the computer. User loses when they go over the computer's generated number.
+User wins when they match the computer's number. User loses when their number exceeds the computer's number.
 
 Game is refreshed automatically after user wins or loses.
