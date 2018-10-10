@@ -1,3 +1,5 @@
+$(document).ready(function() {
+
 //Computer generates a random number between 19 and 120
 var compMin = 19;
 var compMax = 120;
@@ -97,3 +99,5 @@ $("#char").on("click", function() {
     }
 });
 console.log("Charmander Value: " + userNumber[3])
+
+});
